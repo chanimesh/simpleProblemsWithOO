@@ -7,5 +7,5 @@ class ReverseSentence:
         stringList.reverse()
         return stringList
 
-    def join_list:
-        return True
+    def join_list(self,stringList):
+        return " ".join(stringList) 

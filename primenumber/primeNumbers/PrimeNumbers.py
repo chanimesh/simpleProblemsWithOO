@@ -1,20 +1,20 @@
+import math
 class PrimeNumbers:
     def __init__(self):
-        self.primenum=[]
+        self.primenum=[2]
 
-    def is_divisible(self, divisor, dividend):
-        if dividend % divisor == 0:
-            return True
-        return False
-
-    def is_prime(self,num):
-        for i in range(2,num):
-            if self.is_divisible(i,num):
+    def __is_prime(self,num):
+        for i in range(2,int(math.ceil(math.sqrt(num))+1)):
+            if num % i == 0:
               return False
         return True
 
-    def list_primenumbers(self,end):
-        for i in range(2,end+1):
-            if self.is_prime(i):
+    def list_prime_numbers(self, end):
+        if end < 1:
+            return "error"
+        i=2
+        while len(self.primenum) < end:
+            if self.__is_prime(i):
                 self.primenum.append(i)
+            i = i+1
         return self.primenum
